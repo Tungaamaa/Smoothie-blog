@@ -30,10 +30,12 @@ export const Home = () => {
         </p>
         <p>
           <a
-            class="btn btn-lg btn-primary mt-4 dis-small"
+            class="homepage-button"
             href="categories"
-            aria-label="Go to the content home section"
-            >Discover Now</a
+            >
+            <button>
+            Discover Now
+            </button></a
           >
         </p>
       </div>
