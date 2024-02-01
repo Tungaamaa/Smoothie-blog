@@ -1,8 +1,9 @@
 require("dotenv").config();
-
+const mongoose = require("mongoose");
 const express = require("express");
+const usersRoutes = require("./src/routes/users");
 const cors = require("cors");
-const PORT = process.env.PORT || 3000;
+const port = process.env.PORT || 3000;
 
 const app = express();
 
@@ -24,6 +25,8 @@ app.use((req, res, next) => {
   next();
 });
 
+app.use("/users", usersRoutes);
+
 app.get("/", (req, res) => {
   res.send("hello world!");
 });
@@ -33,6 +36,12 @@ app.use("/", (req, res, next) => {
   next();
 });
 
-app.listen(PORT, () => {
-  console.log(`listening on http://localhost:${PORT}`);
-});
+mongoose
+  .connect(process.env.MONGODB_URI)
+  .then(
+    console.log("Connected MongoDB successfully"),
+    app.listen(port, () => {
+      console.log(`Server is running at http://localhost:${port}`);
+    })
+  )
+  .catch((err) => console.log(err));

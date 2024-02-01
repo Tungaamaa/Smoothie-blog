@@ -1,22 +1,43 @@
 import { createContext, useContext, useEffect, useState } from "react";
-
-
+import { isTokenExpired } from "../utils/utils";
 
 export const UserContext = createContext();
 
 export const UserContextProvider = ({ children }) => {
-  
   const [currentUser, setCurrentUser] = useState(null);
   const [userContextLoading, setUserContextLoading] = useState(true);
 
   useEffect(() => {
-    const user = localStorage.getItem("user");
+    try {
+      const user = JSON.parse(localStorage.getItem("user"));
+      const token = user?.token;
 
-    if (user) {
-      setCurrentUser(JSON.parse(user));
+      if (!user) {
+        setUserContextLoading(false);
+        return;
+      }
+      if (token && !isTokenExpired(token)) {
+        setCurrentUser(user);
+        setUserContextLoading(false);
+      } else {
+        signOut();
+
+        setUserContextLoading(false);
+        alert("Sesion expired. Please sign in again.");
+      }
+    } catch (error) {
+      alert(error?.message);
     }
-    setUserContextLoading(false);
   }, []);
+
+  // useEffect(() => {
+  //   const user = localStorage.getItem("user");
+
+  //   if (user) {
+  //     setCurrentUser(JSON.parse(user));
+  //   }
+  //   setUserContextLoading(false);
+  // }, []);
 
   const signUp = (userInfo) => {
     setCurrentUser(userInfo);
@@ -24,10 +45,9 @@ export const UserContextProvider = ({ children }) => {
 
   const signIn = (userInfo) => {
     setCurrentUser(userInfo);
-    
   };
 
-  const signOut = (userInfo) => {
+  const signOut = () => {
     localStorage.removeItem("user");
     setCurrentUser(null);
   };

@@ -1,8 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import "./SignUp.css";
 import {
-  FaUser,
   FaEnvelope,
   FaLock,
   FaFacebook,
@@ -10,69 +7,49 @@ import {
   FaGoogle,
   FaLinkedin,
 } from "react-icons/fa";
-import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import { useUserContext } from "../../context/UserContext";
+import axios from "axios";
 
-export const SignUp = () => {
+export const SignIn = () => {
+  const { signIn } = useUserContext();
   const navigate = useNavigate();
-  const { signUp } = useUserContext();
-
   const [formValues, setFormValues] = useState({
-    username: "",
     email: "",
     password: "",
   });
-  const handleInput = async (e) => {
+  const handleInput = (e) => {
     const name = e.target.name;
     const value = e.target.value;
     setFormValues({ ...formValues, [name]: value });
   };
 
-  const handleSubmit = async () => {
+  const handleSignIn = async () => {
     try {
       const response = await axios.post(
-        "http://localhost:8080/users/sign-up",
+        "http://localhost:8080/users/sign-in",
         formValues
       );
+      setFormValues({ email: "", password: "" });
+      navigate("/");
 
-      const user = await response.data;
+      const user = response.data;
 
       localStorage.setItem("user", JSON.stringify(user));
-      signUp(user);
-      setFormValues({
-        username: "",
-        email: "",
-        password: "",
-      });
 
-      navigate("/");
+      signIn(user);
     } catch (error) {
-      if (error.response && error.response.status === 409) {
-      } else {
-        console.error(error);
-      }
+      console.error(error);
     }
   };
-
   return (
     <div>
       <div className="sign-up-page-container">
         <div className="sign-up-page-forms-container">
           <div className="sign-up-page-content">
             <div className="sign-up-page">
-              <h2 className="title">Sign up</h2>
-              <div className="input-field">
-                <i>
-                  <FaUser />
-                </i>
-                <input
-                  type="text"
-                  name="username"
-                  value={formValues.username}
-                  onChange={handleInput}
-                  placeholder="Username"
-                ></input>
-              </div>
+              <h2 className="title">Sign in</h2>
+
               <div className="input-field">
                 <i>
                   <FaEnvelope />
@@ -99,11 +76,11 @@ export const SignUp = () => {
               </div>
               <input
                 type="submit"
-                onClick={handleSubmit}
+                onClick={handleSignIn}
                 className="btn"
-                value="Sign Up"
+                value="Login"
               ></input>
-              <p className="social text">Or Sign up with social platforms</p>
+              <p className="social text">Or Sign in with social platforms</p>
               <div className="social-media">
                 <a href="https://" className="social-icon">
                   <i>
