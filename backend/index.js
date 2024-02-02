@@ -2,6 +2,7 @@ require("dotenv").config();
 const mongoose = require("mongoose");
 const express = require("express");
 const usersRoutes = require("./src/routes/users");
+const recipesRoutes = require("./src/routes/recipes");
 const cors = require("cors");
 const port = process.env.PORT || 3000;
 
@@ -26,6 +27,7 @@ app.use((req, res, next) => {
 });
 
 app.use("/users", usersRoutes);
+app.use("/recipes", recipesRoutes);
 
 app.get("/", (req, res) => {
   res.send("hello world!");

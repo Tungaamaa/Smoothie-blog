@@ -1,33 +1,55 @@
 import React from "react";
-import "./Header.css";
-import { MdLocalDrink } from "react-icons/md";
 
+import "./Header.scss";
+import { MdLocalDrink } from "react-icons/md";
+import { AiFillCloseCircle } from "react-icons/ai";
+import { TbGridDots } from "react-icons/tb";
 
 export const Header = () => {
   return (
-    <div>
-      <header>
-        <i className="logo">
-        
-        <MdLocalDrink/>
-        </i>
-        <nav>
-          <ul className="nav-links">
-            <li>
-              <a>Recipes</a>
+    <section className="navBarSection">
+      <header className="header flex">
+        <div className="logoDiv">
+          <a href="" className="logo flex">
+            <h1>
+              <MdLocalDrink className="icon" />
+              Smoothie.
+            </h1>
+          </a>
+        </div>
+        <nav className="navbar">
+          <ul className="navLists flex">
+            <li className="navItem">
+              <a href="#" className="navLink">Recipes</a>
             </li>
+
             <li>
-              <a>Profile</a>
+              <a href="#" className="navLink">Profile</a>
             </li>
+
             <li>
-              <a>Contact</a>
+              <a href="#" className="navLink">Contact</a>
             </li>
+
+            <button className="btn">
+            <a href="#">
+            Login
+            </a>
+            </button>
           </ul>
+
+          <div className="closeNavbar"> 
+          <AiFillCloseCircle className="icon" />
+          </div>
         </nav>
-        <a className="cta">
-          <button>Login</button>
-        </a>
+
+        <div className="toglleNavbar">
+        <TbGridDots className="icon"/>
+        </div>
+       
+       
+      
       </header>
-    </div>
+    </section>
   );
 };
