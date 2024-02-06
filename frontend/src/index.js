@@ -5,14 +5,13 @@ import App from "./App";
 import { UserContextProvider } from "./context/UserContext";
 import { ProductsContextProvider } from "./context/ProductContext";
 
-
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <UserContextProvider>
-    <ProductsContextProvider>
-    <App />
-    </ProductsContextProvider>
+      <ProductsContextProvider>
+        <App />
+      </ProductsContextProvider>
     </UserContextProvider>
   </React.StrictMode>
 );

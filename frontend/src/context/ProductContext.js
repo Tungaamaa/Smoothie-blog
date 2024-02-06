@@ -8,6 +8,7 @@ export const ProductsContextProvider = ({ children }) => {
   const [products, setProducts] = useState([]);
   const {currentUser, userContextLoading} = useUserContext();
   const [productContextLoading, setProductContextLoading] = useState(true);
+  console.log(userContextLoading);
 
   useEffect(() => {
     if (!userContextLoading) {
@@ -19,6 +20,7 @@ export const ProductsContextProvider = ({ children }) => {
             },
           });
           const data = await response.data;
+          console.log(data);
           setProducts(data);
           setProductContextLoading(false);
         } catch (error) {
