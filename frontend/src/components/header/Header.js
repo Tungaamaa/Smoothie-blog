@@ -5,6 +5,7 @@ import { AiFillCloseCircle } from "react-icons/ai";
 import { TbGridDots } from "react-icons/tb";
 import { useUserContext } from "../../context/UserContext";
 import { useProductContext } from "../../context/ProductContext";
+import { Link } from "react-router-dom";
 
 export const Header = () => {
   const [active, setActive] = useState('navBar'); 
@@ -32,25 +33,27 @@ export const Header = () => {
     <section className="navBarSection">
       <header className="header flex">
         <div className="logoDiv">
-          <a href="/" className="logo flex">
+          <Link to="/" className="logo flex">
             <h1>
               <MdLocalDrink className="icon" />
               Smoothie.
             </h1>
-          </a>
+          </Link>
         </div>
         <nav className={active}>
           <ul className="navLists flex">
             <li className="navItem">
-              <a href="/recipes" className="navLink">Recipes</a>
+            <Link to="/recipes" className="navLink">Recipes</Link>
             </li>
 
             <li className="navItem">
-              <a href="#" className="navLink">Profile</a>
+              
+              <Link to="#" className="navLink">Profile</Link>
             </li>
 
             <li className="navItem">
-              <a href="#" className="navLink">Contact</a>
+            
+              <Link to="#" className="navLink">Contact</Link>
             </li>
 
             <button className="btn" onClick={handleLogOut}>
@@ -77,31 +80,31 @@ export const Header = () => {
     <section className="navBarSection">
       <header className="header flex">
         <div className="logoDiv">
-          <a href="/" className="logo flex">
+          <Link to="/" className="logo flex">
             <h1>
               <MdLocalDrink className="icon" />
               Smoothie.
             </h1>
-          </a>
+          </Link>
         </div>
         <nav className={active}>
           <ul className="navLists flex">
             <li className="navItem">
-              <a href="/recipes" className="navLink">Recipes</a>
+            <Link to="/recipes" className="navLink">Recipes</Link>
             </li>
 
             <li className="navItem">
-              <a href="#" className="navLink">Contact</a>
+            <Link to="#" className="navLink">Contact</Link>
             </li>
 
             <li className="navItem">
-              <a href="/sign-up" className="navLink">Sign-up</a>
+            <Link to="#" className="navLink">About Us</Link>
             </li>
 
             <button className="btn">
-            <a href="/sign-in">
+            <Link to="/sign-in">
             Login
-            </a>
+            </Link>
             </button>
           </ul>
 

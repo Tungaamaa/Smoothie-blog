@@ -81,7 +81,7 @@ export const CreateProductModal = (props) => {
 
           <input
             type="text"
-            name="name"
+            name="title"
             value={formValues.title}
             placeholder="name"
             onChange={handleChange}

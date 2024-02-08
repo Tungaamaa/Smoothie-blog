@@ -30,14 +30,14 @@ export const SignIn = () => {
         "http://localhost:8080/users/sign-in",
         formValues
       );
-      setFormValues({ email: "", password: "" });
-      navigate("/");
 
-      const user = response.data;
+      const user = await response.data;
 
       localStorage.setItem("user", JSON.stringify(user));
 
       signIn(user);
+      setFormValues({ email: "", password: "" });
+      navigate("/");
     } catch (error) {
       console.error(error);
     }

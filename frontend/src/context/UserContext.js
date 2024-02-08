@@ -11,7 +11,7 @@ export const UserContextProvider = ({ children }) => {
     try {
       const user = JSON.parse(localStorage.getItem("user"));
       const token = user?.token;
-
+console.log(isTokenExpired(token));
       if (!user) {
         setUserContextLoading(false);
         return;
@@ -23,21 +23,13 @@ export const UserContextProvider = ({ children }) => {
         signOut();
 
         setUserContextLoading(false);
-        alert("Sesion expired. Please sign in again.");
+        alert("Session expired. Please sign in again.");
       }
     } catch (error) {
       alert(error?.message);
     }
   }, []);
 
-  // useEffect(() => {
-  //   const user = localStorage.getItem("user");
-
-  //   if (user) {
-  //     setCurrentUser(JSON.parse(user));
-  //   }
-  //   setUserContextLoading(false);
-  // }, []);
 
   const signUp = (userInfo) => {
     setCurrentUser(userInfo);

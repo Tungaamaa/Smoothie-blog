@@ -7,6 +7,7 @@ export const ProductContext = createContext();
 export const ProductsContextProvider = ({ children }) => {
   const [products, setProducts] = useState([]);
   const {currentUser, userContextLoading} = useUserContext();
+  console.log(currentUser);
   const [productContextLoading, setProductContextLoading] = useState(true);
   console.log(userContextLoading);
 
