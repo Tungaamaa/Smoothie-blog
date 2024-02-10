@@ -1,7 +1,11 @@
-:root{
-  --PrimaryColor:hsl(199, 100%, 33%);
-  --SecondaryColor:hsl(187, 85%, 43%);
-  --gradientColor: linear-gradient(to right, hsl(187, 85%, 43%), hsl(199, 100%, 33%));
+:root {
+  --PrimaryColor: hsl(199, 100%, 33%);
+  --SecondaryColor: hsl(187, 85%, 43%);
+  --gradientColor: linear-gradient(
+    to right,
+    hsl(187, 85%, 43%),
+    hsl(199, 100%, 33%)
+  );
   --whiteColor: hsl(0, 0%, 100%);
   --blackColor: hsl(201, 33%, 16%);
   --textColor: hsl(240, 4%, 36%);
@@ -30,10 +34,10 @@
     align-items: center;
     justify-content: center;
 
-    .icon{
-        font-size: 25px;
-        color: var(--PrimaryColor);
-        transform: translateY(5px);
+    .icon {
+      font-size: 25px;
+      color: var(--PrimaryColor);
+      transform: translateY(5px);
     }
   }
   @media screen and (max-width: 768px) {
@@ -49,7 +53,7 @@
       transform: translate(-50%);
       z-index: 2000;
       box-shadow: 0 2px 4px rgba(2, 15, 29, 0.904);
-      transition: .5s ease-in-out;
+      transition: 0.5s ease-in-out;
 
       .navLists {
         flex-direction: column;
@@ -71,10 +75,10 @@
           }
         }
 
-        .btn{
+        .btn {
           margin-top: 1rem;
 
-          a{
+          Link {
             font-weight: 600;
             color: var(--whiteColor);
           }
@@ -85,88 +89,83 @@
         top: 1rem;
         right: 1.5rem;
         color: var(--PrimaryColor);
-        &:hover{
-            color: var(--SecondaryColor);
+        &:hover {
+          color: var(--SecondaryColor);
         }
-
       }
     }
 
-    .activeNavbar{
+    .activeNavbar {
       top: 7rem;
     }
   }
 
   .toglleNavbar {
-    .icon{
-        font-size: 25px;
-        color: var(--PrimaryColor);
+    .icon {
+      font-size: 25px;
+      color: var(--PrimaryColor);
     }
-    &:hover.icon{
-        color: var(--SecondaryColor);
+    &:hover.icon {
+      color: var(--SecondaryColor);
     }
-
   }
 }
 
-
 @media screen and (min-width: 769px) {
-      .toglleNavbar,.closeNavbar{
-        display: none;
-      }
+  .toglleNavbar,
+  .closeNavbar {
+    display: none;
+  }
 
-      .header {
-        padding: 1.5rem 2 rem;
+  .header {
+    padding: 1.5rem 2 rem;
 
-        .navBar{
-          .navLists{
-            display:flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: row;
+    .navBar {
+      .navLists {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
 
-            .navItem{
-              .navLink{
-                color: var(--textColor);
-                padding: 0 0.45rem;
-                font-size: 0.9rem;
-                font-weight: 500;
+        .navItem {
+          .navLink {
+            color: var(--textColor);
+            padding: 0 0.45rem;
+            font-size: 0.9rem;
+            font-weight: 500;
 
-                &:hover{
-                  color: var(--PrimaryColor);
-                }
-
-              }
-            }
-            .btn{
-              margin-left: 1rem;
-
-            a{
-              color: var(--whiteColor);
-              font-weight: 500;
-            }
+            &:hover {
+              color: var(--PrimaryColor);
             }
           }
         }
+        .btn {
+          margin-left: 1rem;
+
+          Link {
+            color: var(--whiteColor);
+            font-weight: 500;
+          }
+        }
       }
+    }
+  }
 }
 
 @media screen and (min-width: 960px) {
-  .header{
-    .navBar{
-      .navLists{
-        .navItem{
+  .header {
+    .navBar {
+      .navLists {
+        .navItem {
           padding: 0 0.7rem;
         }
       }
     }
   }
-
 }
 
 @media screen and (min-width: 1240px) {
-  .header{
- padding: 1rem 8.5rem;
+  .header {
+    padding: 1rem 8.5rem;
   }
-
 }

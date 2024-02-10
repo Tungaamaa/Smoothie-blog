@@ -4,8 +4,9 @@ import { useProductContext } from "../../context/ProductContext";
 import axios from "axios";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { storage } from "../../firebase/firebase";
-import { Radio } from "antd";
+import { Button, Form, Input, Radio } from "antd";
 import { Modal } from "../../components/modal/Modal";
+
 
 const plainOptions = ["private", "public"];
 
@@ -75,45 +76,59 @@ export const CreateProductModal = (props) => {
   };
   return (
     <div>
-      <div>
-        <Modal open={open} handleClose={handleClose}>
-          <h3>Create a new recipe</h3>
-
-          <input
+      <Modal open={open} handleClose={handleClose}>
+        <div >
+          <div >
+            <h3>Create a new recipe</h3>
+            <Form>
+            <Form.Item>
+            <Input
             type="text"
             name="title"
             value={formValues.title}
-            placeholder="name"
+            placeholder="enter your recipe title"
             onChange={handleChange}
-          />
-          <input
-            type="text"
-            name="description"
-            value={formValues.description}
-            onChange={handleChange}
-            placeholder="description"
-          />
+            />
+            </Form.Item>
 
-          <input
+             <Form.Item>
+             <Input
+             type="text"
+             name="description"
+             value={formValues.description}
+             onChange={handleChange}
+             placeholder="enter your recipe"
+             />
+             </Form.Item>
+             <Form.Item>
+            <Input
             type="file"
-            placeholder="enter your image"
-            name="image"
-            onChange={handleFileChange}
-          ></input>
-          <Radio.Group
-            options={plainOptions}
-            onChange={onChangeType}
-            value={type}
-            optionType="button"
-            buttonStyle="solid
-"
-          />
-          <div>
-            <button onClick={handleClose}>Cancel</button>
-            <button onClick={handleSubmit}>Submit</button>
+             placeholder="enter your image"
+             name="image"
+             onChange={handleFileChange}
+            />
+             </Form.Item>
+              <Form.Item>
+              <Radio.Group
+              options={plainOptions}
+              onChange={onChangeType}
+              value={type}
+              optionType="button"
+              buttonStyle="solid"
+            />
+              </Form.Item>
+            
+              <div>
+                <Button onClick={handleClose}>Cancel</Button>
+                <Button onClick={handleSubmit}>Submit</Button>
+              </div>
+            </Form>
+          
           </div>
-        </Modal>
-      </div>
+        </div>
+      </Modal>
     </div>
   );
 };
+
+

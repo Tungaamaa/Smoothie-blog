@@ -1,54 +1,70 @@
 import React from "react";
 import "./Main.css";
-import img from "../../images/signup.jpeg";
+import img1 from "../../images/signup.jpeg";
+import img2 from "../../images/homepage1.jpeg";
+import img3 from "../../images/s2.jpeg";
+import img4 from "../../images/homepage2.jpeg";
+import img5 from "../../images/homepage3.avif";
+import img6 from "../../images/s1.jpeg";
+
+
 import { MdOutlineLocalDrink } from "react-icons/md";
 import { CgDetailsMore } from "react-icons/cg";
 
 const Data = [
   {
     id: 1,
-    imgSrc: img,
+    imgSrc: img1,
     destTitle: "Berry Blast Smoothie",
     location: "Detox Smoothies",
-    grade: "cultural relax",
+    grade: "Fiber Content",
     fees: "8 reviews",
-    description: "Start your day on a bright note with our Tropical Sunrise Smoothie, a refreshing blend of tropical fruits and creamy coconut goodness. This luscious smoothie combines the sweetness of ripe mangoes, tangy pineapple, and succulent papaya, balanced perfectly with a hint of zesty lime and a splash of coconut water..",
+    description: "Start your day on a bright note with our Tropical Sunrise Smoothie, a refreshing blend of tropical fruits and creamy coconut goodness.",
   },
   {
-    id: 1,
-    imgSrc: img,
+    id: 2,
+    imgSrc: img2,
     destTitle: "Tropical Sunrise Smoothie",
     location: "Fruit Smoothies",
-    grade: "cultural relax",
-    fees: "8 reviews",
-    description: "hsbjdh hsadbhja hsbadjhdaj.",
+    grade: "Protein Content",
+    fees: "7 reviews",
+    description: "This luscious smoothie combines the sweetness of ripe mangoes, tangy pineapple, and succulent papaya, balanced perfectly with a hint of zesty lime and a splash of coconut water",
   },
   {
-    id: 1,
-    imgSrc: img,
+    id: 3,
+    imgSrc: img3,
     destTitle: "Green Goddess Smoothie",
     location: "Green Smoothies",
-    grade: "cultural relax",
-    fees: "8 reviews",
-    description: "hsbjdh hsadbhja hsbadjhdaj.",
+    grade: "Sugar Content",
+    fees: "2 reviews",
+    description: "This luscious smoothie combines the sweetness of ripe mangoes, tangy pineapple, and succulent papaya, balanced perfectly with a hint of zesty lime and a splash of coconut water",
   },
   {
-    id: 1,
-    imgSrc: img,
+    id: 4,
+    imgSrc: img4,
     destTitle: "Mango Tango Smoothie",
     location: "Protein Smoothies",
-    grade: "cultural relax",
-    fees: "8 reviews",
-    description: "hsbjdh hsadbhja hsbadjhdaj.",
+    grade: "Caloric Content",
+    fees: "9 reviews",
+    description: "This luscious smoothie combines the sweetness of ripe mangoes, tangy pineapple, and succulent papaya, balanced perfectly with a hint of zesty lime and a splash of coconut water",
   },
   {
-    id: 1,
-    imgSrc: img,
+    id: 5,
+    imgSrc: img5,
     destTitle: "Peanut Butter Power Smoothie",
     location: "Antioxidant-Rich Smoothies",
-    grade: "cultural relax",
-    fees: "8 reviews",
-    description: "hsbjdh hsadbhja hsbadjhdaj.",
+    grade: "Caloric Content",
+    fees: "3 reviews",
+    description: "This luscious smoothie combines the sweetness of ripe mangoes, tangy pineapple, and succulent papaya, balanced perfectly with a hint of zesty lime and a splash of coconut water",
+  },
+  {
+    id: 6,
+    imgSrc: img6,
+    destTitle: "Peanut Butter Power Smoothie",
+    location: "Antioxidant-Rich Smoothies",
+    grade: "Overall Balance",
+    fees: "5 reviews",
+    description: "This luscious smoothie combines the sweetness of ripe mangoes, tangy pineapple, and succulent papaya, balanced perfectly with a hint of zesty lime and a splash of coconut water",
   },
 ];
 

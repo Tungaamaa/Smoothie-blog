@@ -4,6 +4,7 @@ import "./App.css";
 import { useUserContext } from "./context/UserContext";
 import { SignIn } from "./pages/signin/SignIn";
 import { SignUp } from "./pages/signup/SignUp";
+import { Product } from "./pages/product/Product";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 function App() {
@@ -26,8 +27,10 @@ function App() {
         />
         <Route
           path="/recipes"
-          element={currentUser ? <Products /> : <Navigate to="/sign-in" />}
-        />
+          element={currentUser ? <Products /> : <Navigate to="/sign-in" />}/>
+          <Route
+          path="/recipes/:id"
+          element={currentUser ? <Product /> : <Navigate to="/sign-in" />}/>
       </Routes>
     </BrowserRouter>
   );
