@@ -6,6 +6,7 @@ import { SignIn } from "./pages/signin/SignIn";
 import { SignUp } from "./pages/signup/SignUp";
 import { Product } from "./pages/product/Product";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { Profile } from "./pages/profile/Profile";
 
 function App() {
   const { currentUser, userContextLoading } = useUserContext();
@@ -31,6 +32,9 @@ function App() {
           <Route
           path="/recipes/:id"
           element={currentUser ? <Product /> : <Navigate to="/sign-in" />}/>
+          <Route
+          path="/profile"
+          element={currentUser ? <Profile /> : <Navigate to="/sign-in" />}/>
       </Routes>
     </BrowserRouter>
   );

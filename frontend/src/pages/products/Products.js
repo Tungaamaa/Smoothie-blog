@@ -7,6 +7,7 @@ import { CreateProductModal } from "./CreateProductModal";
 import { MdOutlineLocalDrink } from "react-icons/md";
 import { CgDetailsMore } from "react-icons/cg";
 import { Footer } from "../../components/footer/Footer";
+import { Button} from "antd";
 
 export const Products = () => {
   const navigate = useNavigate();
@@ -37,12 +38,12 @@ export const Products = () => {
      
           <div >
             <div >
-              <button
+              <Button
                 className="create-new-product-button"
                 onClick={handleOpen}
               >
                 Create new product
-              </button>
+              </Button>
             </div>
           </div>
           <div className="secContent grid">

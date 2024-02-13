@@ -3,6 +3,8 @@ const mongoose = require("mongoose");
 const express = require("express");
 const usersRoutes = require("./src/routes/users");
 const recipesRoutes = require("./src/routes/recipes");
+const editProfileRoutes = require("./src/routes/editProfile");
+// const reviewsRouters = require("./src/routes/review");
 const cors = require("cors");
 const port = process.env.PORT || 3000;
 
@@ -28,6 +30,8 @@ app.use((req, res, next) => {
 
 app.use("/users", usersRoutes);
 app.use("/recipes", recipesRoutes);
+app.use("/account", editProfileRoutes);
+// app.use("/recipes", reviewsRouters);
 
 app.get("/", (req, res) => {
   res.send("hello world!");

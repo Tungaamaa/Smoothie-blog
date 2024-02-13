@@ -4,6 +4,7 @@ import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 import { useUserContext } from "../../context/UserContext";
 import { useProductContext } from "../../context/ProductContext";
+import { Button} from "antd";
 
 export const DeleteProductModal = (props) => {
   const navigate = useNavigate();
@@ -37,8 +38,8 @@ export const DeleteProductModal = (props) => {
       <Modal open={open} handleClose={handleClose}>
         <h3>Are you sure you want to delete this product?</h3>
 
-        <button onClick={handleClose}>Cancel</button>
-        <button onClick={handleDeleteProduct}>Delete</button>
+        <Button onClick={handleClose}>Cancel</Button>
+        <Button onClick={handleDeleteProduct}>Delete</Button>
       </Modal>
     </div>
   );

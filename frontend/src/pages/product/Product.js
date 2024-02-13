@@ -9,6 +9,7 @@ import { useUserContext } from "../../context/UserContext";
 import { useProductContext } from "../../context/ProductContext";
 import recipeVideo from "../../images/recipe.mp4";
 import { Footer } from "../../components/footer/Footer";
+import { Button} from "antd";
 
 export const Product = () => {
   const { id } = useParams();
@@ -88,8 +89,8 @@ export const Product = () => {
            </div>
          </div>
          <div className="single-recipe-buttons">
-         <button onClick={handleOpenEdit}>edit</button>
-         <button onClick={handleOpenDelete}>delete</button>
+         <Button className="edit-button" onClick={handleOpenEdit}>edit</Button>
+         <Button className="edit-button" onClick={handleOpenDelete}>delete</Button>
          </div>
         
        </div>

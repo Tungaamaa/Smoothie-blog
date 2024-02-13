@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import { useUserContext } from "../../context/UserContext";
 import { useProductContext } from "../../context/ProductContext";
+import { Button, Form, Input } from "antd";
 
 export const EditProductModal = (props) => {
   const { open, handleClose, product } = props;
@@ -12,7 +13,7 @@ export const EditProductModal = (props) => {
   const { UPDATE_PRODUCT } = useProductContext();
 
   const [formValues, setFormValues] = useState({
-    name: product.title,
+    title: product.title,
     description: product.description,
   });
 
@@ -46,23 +47,29 @@ export const EditProductModal = (props) => {
   return (
     <div>
       <Modal open={open} handleClose={handleClose}>
-        <h3>Edit Product</h3>
-        <input
-          type="text"
-          name="name"
-          value={formValues.title}
-          placeholder="name"
-          onChange={handleChange}
-        />
-        <input
-          type="text"
-          name="description"
-          value={formValues.description}
-          onChange={handleChange}
-          placeholder="description"
-        />
-        <button onClick={handleClose}>Cancel</button>
-        <button onClick={handleSave}>Save</button>
+      <Form>
+      <h3>Edit Product</h3>
+      <Form.Item>
+      <Input
+      type="text"
+      name="title"
+      value={formValues.title}
+      onChange={handleChange}
+    />
+      </Form.Item>
+       <Form.Item>
+       <Input
+       type="text"
+       name="description"
+       value={formValues.description}
+       onChange={handleChange}
+     />
+       </Form.Item>
+      
+        <Button onClick={handleClose}>Cancel</Button>
+        <Button onClick={handleSave}>Save</Button>
+      </Form>
+        
       </Modal>
     </div>
   );

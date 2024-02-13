@@ -48,7 +48,7 @@ export const Header = () => {
 
             <li className="navItem">
               
-              <Link to="#" className="navLink">Profile</Link>
+              <Link to="/profile" className="navLink">Profile</Link>
             </li>
 
             <li className="navItem">

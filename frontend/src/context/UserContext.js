@@ -43,9 +43,13 @@ console.log(isTokenExpired(token));
     localStorage.removeItem("user");
     setCurrentUser(null);
   };
+
+  const updateUser = (userInfo) => {
+    setCurrentUser(userInfo);
+  };
   return (
     <UserContext.Provider
-      value={{ currentUser, signUp, signIn, signOut, userContextLoading }}
+      value={{ currentUser, signUp, signIn, signOut, updateUser, userContextLoading }}
     >
       {children}
     </UserContext.Provider>
