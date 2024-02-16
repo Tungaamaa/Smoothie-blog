@@ -5,7 +5,15 @@ const getAllRecipes = async (req, res) => {
 
   const recipes = await Recipe.find({
     $or: [{ userId }, { type: "public" }],
-  });
+  })
+    .populate({
+      path: "comments",
+      populate: { path: "user", select: "email" },
+    })
+    .populate({
+      path: "user",
+      select: "email",
+    });
   if (!recipes) {
     return res.status(404).json({ message: "Recipes not found" });
   }

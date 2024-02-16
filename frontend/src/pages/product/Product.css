@@ -64,3 +64,26 @@ li{
     padding: 20px;
     gap: 50px;
 }
+
+.comment-section{
+    margin-top: 30px;
+    margin-bottom: 60px;
+}
+
+.comment-input{
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 50px;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.comments-section{
+    margin: 0px;
+    display: flex;
+}
+
+.single-comment{
+    margin-right: 10px;
+}

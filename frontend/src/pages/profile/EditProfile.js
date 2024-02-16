@@ -67,6 +67,25 @@ export const EditProfileModal = (props) => {
      <Input
      type="password"
      name="password"
+     placeholder="current password"
+     value={formValues.password}
+     onChange={handleChange}
+   />
+     </Form.Item>
+     <Form.Item>
+     <Input
+     type="password"
+     name="password"
+     placeholder="new password"
+     value={formValues.password}
+     onChange={handleChange}
+   />
+     </Form.Item>
+     <Form.Item>
+     <Input
+     type="password"
+     name="password"
+    placeholder="confirm password"
      value={formValues.password}
      onChange={handleChange}
    />
