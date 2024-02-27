@@ -10,7 +10,7 @@ export const DeleteProductModal = (props) => {
   const navigate = useNavigate();
   const { open, handleClose } = props;
   const { id } = useParams();
-  const { currentUser, userContextLoading } = useUserContext();
+  const { currentUser} = useUserContext();
   const { DELETE_PRODUCT } = useProductContext();
 
   const handleDeleteProduct = async () => {

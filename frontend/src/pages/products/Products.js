@@ -42,7 +42,7 @@ export const Products = () => {
                 className="create-new-product-button"
                 onClick={handleOpen}
               >
-                Create new product
+                Create a new recipe
               </Button>
             </div>
           </div>

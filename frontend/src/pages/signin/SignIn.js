@@ -10,6 +10,7 @@ import {
 import { useNavigate } from "react-router-dom";
 import { useUserContext } from "../../context/UserContext";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 export const SignIn = () => {
   const { signIn } = useUserContext();
@@ -80,6 +81,8 @@ export const SignIn = () => {
                 className="btn"
                 value="Login"
               ></input>
+             
+              
               <p className="social text">Or Sign in with social platforms</p>
               <div className="social-media">
                 <a href="https://" className="social-icon">
@@ -103,6 +106,10 @@ export const SignIn = () => {
                   </i>
                 </a>
               </div>
+              <br></br>
+              <p className="social text">Don't have an account? <Link to="/sign-up">
+              Register here
+              </Link></p>
             </div>
           </div>
         </div>

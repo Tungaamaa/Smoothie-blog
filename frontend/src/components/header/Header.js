@@ -87,7 +87,7 @@ export const Header = () => {
             </h1>
           </Link>
         </div>
-        <nav className={active}>
+        <nav className={active} >
           <ul className="navLists flex">
             <li className="navItem">
             <Link to="/recipes" className="navLink">Recipes</Link>

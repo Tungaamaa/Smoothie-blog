@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Product.css";
 import { Header } from "../../components/header/Header";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import { EditProductModal } from "./EditProductModal";
 import { DeleteProductModal } from "./DeleteProductModal";
@@ -10,11 +10,21 @@ import { useProductContext } from "../../context/ProductContext";
 import recipeVideo from "../../images/recipe.mp4";
 import { Footer } from "../../components/footer/Footer";
 import { Button } from "antd";
+import { FaDeleteLeft } from "react-icons/fa6";
+import { CiEdit } from "react-icons/ci";
+import { DeleteComment } from "./comment/DeleteComment";
 
 export const Product = () => {
   const { id } = useParams();
 
+  const navigate = useNavigate();
   const [comment, setComment] = useState("");
+
+  const [commentId, setCommentId] = useState("");
+  const [openDeleteCommentModal, setOpenDeleteCommentModal] = useState(false);
+  const handleOpenDeleteCommentModal = () => setOpenDeleteCommentModal(true);
+  const handleCloseDeleteCommentModal = () => setOpenDeleteCommentModal(false);
+
   const [openEdit, setOpenEdit] = React.useState(false);
   const handleOpenEdit = () => setOpenEdit(true);
   const handleCloseEdit = () => setOpenEdit(false);
@@ -24,9 +34,15 @@ export const Product = () => {
   const handleCloseDelete = () => setOpenDelete(false);
   const { currentUser } = useUserContext();
 
-  const { products, productContextLoading, UPDATE_PRODUCT } = useProductContext();
+  const { products, productContextLoading, UPDATE_PRODUCT } =
+    useProductContext();
 
   const product = products.find((product) => product._id === id);
+
+  const handleDeleteComment = async (commentId) => {
+    setCommentId(commentId);
+    handleOpenDeleteCommentModal();
+  };
 
   const handleAddComment = async (e) => {
     e.preventDefault();
@@ -60,7 +76,7 @@ export const Product = () => {
   if (!product) {
     return <div> item not found</div>;
   }
-console.log(product);
+  console.log(product);
   return (
     <div>
       <Header />
@@ -110,10 +126,10 @@ console.log(product);
                 </div>
               </div>
               <div className="single-recipe-buttons">
-                <Button className="edit-button" onClick={handleOpenEdit}>
+                <Button className="btn" onClick={handleOpenEdit}>
                   edit
                 </Button>
-                <Button className="edit-button" onClick={handleOpenDelete}>
+                <Button className="btn" onClick={handleOpenDelete}>
                   delete
                 </Button>
               </div>
@@ -123,11 +139,20 @@ console.log(product);
           <h3>Reviews</h3>
           {product.comments.map((comment, i) => {
             return (
-              <div key={i} className="comments-section">
-                <b>
-                  <p className="single-comment">{comment.user.email}</p>
-                </b>
-                <p>{comment.comment}</p>
+              <div key={i} className="comments">
+                <div className="comments-section">
+                  <b>
+                    <p className="single-comment">{comment.user.email} :</p>
+                  </b>
+                  <p>{comment.comment}</p>
+                </div>
+                <Button className="btn">
+                  <CiEdit />
+                </Button>
+                <Button className="btn"
+                onClick={() => handleDeleteComment(comment._id)}>
+                  <FaDeleteLeft />
+                </Button>
               </div>
             );
           })}
@@ -136,12 +161,12 @@ console.log(product);
             <h3>Add Review</h3>
             <form>
               <textarea
-              className="comment-input"
+                className="comment-input"
                 placeholder="Add Review"
                 value={comment}
                 onChange={(e) => setComment(e.target.value)}
               />
-              <Button className="edit-button" onClick={handleAddComment}>
+              <Button className="btn" onClick={handleAddComment}>
                 Add
               </Button>
             </form>
@@ -155,6 +180,12 @@ console.log(product);
         handleClose={handleCloseEdit}
       />
       <DeleteProductModal open={openDelete} handleClose={handleCloseDelete} />
+      <DeleteComment
+        open={openDeleteCommentModal}
+        handleClose={handleCloseDeleteCommentModal}
+        productId={id}
+        commentId={commentId}
+      />
 
       <Footer />
     </div>

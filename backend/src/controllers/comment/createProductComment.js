@@ -44,9 +44,9 @@ const createProductComment = async (req, res) => {
         select: "email",
       });
 
-    res.status(201).json({
+    res.status(201).json(
       updatedProduct,
-    });
+    );
   } catch (err) {
     return res.status(500).json({
       message: err.message,
