@@ -2,15 +2,11 @@
 
 
 
-
-
-Welcome to Smoothie Heaven! Your ultimate destination for all things smoothie-related. Whether you're a seasoned smoothie enthusiast or just beginning your journey into the world of blended delights, you've come to the right place!
-
 ## About Smoothie Heaven
 Smoothie Heaven is a website dedicated to providing delicious smoothie recipes, nutritional information, and tips to help you create the perfect blend every time. From refreshing fruit smoothies to protein-packed power drinks, we've got something for everyone.
 
 <div>
-<img src=https://firebasestorage.googleapis.com/v0/b/reactproject-99509.appspot.com/o/meditation.jpeg?alt=media&token=760a7ee4-2abb-47d7-b1c1-f6ba6c7861b0>
+<img src=https://firebasestorage.googleapis.com/v0/b/fullstack-c2a68.appspot.com/o/readme.jpeg?alt=media&token=de851580-fffa-44d5-8dd3-b68ecada5372>
 <div>
 
 ## Table of Contents
@@ -23,13 +19,17 @@ Smoothie Heaven is a website dedicated to providing delicious smoothie recipes, 
 7. License
 
 ## Project Overview
-Welcome to the Meditation React App! This application is designed to help users practice meditation and mindfulness through a user-friendly interface built using HTML, CSS, JavaScript, and React.
+Welcome to Smoothie Heaven! Your ultimate destination for all things smoothie-related. Whether you're a seasoned smoothie enthusiast or just beginning your journey into the world of blended delights, you've come to the right place!
 
 ### Key Features
 
-- Guided Meditation Sessions: Access a variety of guided meditation sessions to suit different preferences and durations.
-- Customizable Timers: Set personalized meditation timers to practice mindfulness at your own pace.
-- Progress Tracking: Track your meditation progress and set goals for a consistent practice.
+- Extensive Recipe Collection: Explore a diverse range of smoothie recipes, including fruit-based, green smoothies, protein-packed options, and more.
+- User-Friendly Interface: Our website offers a clean and intuitive interface, making it easy for users to browse recipes, find ingredients, and follow instructions.
+- Customizable Options: Tailor recipes to suit your preferences by adjusting ingredient quantities, substituting ingredients, or selecting dietary options such as vegan, gluten-free, or low-sugar.
+- Nutritional Information: Each recipe comes with detailed nutritional information, including calorie count, macronutrient breakdown, and essential vitamins and minerals.
+- Search and Filter: Quickly find the perfect smoothie recipe by using our search and filter functionalities, allowing you to narrow down options based on ingredients, dietary restrictions, or flavor preferences.
+- Save Favorites: Create an account to save your favorite recipes for easy access later, enabling you to build your own personalized collection of go-to smoothies.
+- Community Interaction: Share your own smoothie creations with the community, rate and review recipes, and engage in discussions with fellow smoothie enthusiasts.
 
 
 ## Technologies Used
@@ -40,7 +40,9 @@ The following technologies will be utilized in this project:
 - CSS (Cascading Style Sheets) for styling and enhancing the visual appearance.
 - JavaScript for implementing interactive features and dynamic functionality.
 - React for building interactive components and managing data.
-- Vite (a React development environment) for efficient development workflow.
+- Node.js
+- Express.js
+- MongoDB
 
 ## Project Structure
 The project structure will be organized as follows:
@@ -60,16 +62,20 @@ meditation/
 
 ## Installation
 1. Clone the repository to your local machine:
-git clone https://github.com/Tungaamaa/meditation
+git clone https://github.com/Tungaamaa/smoothie-blog
 2. Navigate to the project directory:
-cd meditation
-3. Install dependencies:npm install
-4. Start the development server: npm start
-5. Open your browser and visit http://localhost:3000 to view the app.
+cd smoothie-blog
+3.Install dependencies:
+        For frontend: cd client && npm install
+        For backend: cd ../server && npm install
+4.Start the development server:
+        For frontend: cd ../client && npm start
+        For backend: cd ../server && npm start
+5.Open your browser and visit: http://localhost:3000
 
 ## Contributing
 
-Contributions to the meditation website project are welcome. If you would like to contribute, please follow these steps:
+We welcome contributions from the community to help us expand our recipe collection and improve the user experience. If you have a favorite smoothie recipe you'd like to share or suggestions for enhancing the website, please feel free to submit a pull request or reach out to us directly.If you would like to contribute, please follow these steps:
 
 1. Fork the repository.
 2. Create a new branch: git checkout -b your-branch
