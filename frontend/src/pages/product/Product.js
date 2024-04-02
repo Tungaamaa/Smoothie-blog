@@ -13,6 +13,7 @@ import { Button } from "antd";
 import { FaDeleteLeft } from "react-icons/fa6";
 import { CiEdit } from "react-icons/ci";
 import { DeleteComment } from "./comment/DeleteComment";
+import { UpdateComment } from "./comment/UpdateComment";
 
 export const Product = () => {
   const { id } = useParams();
@@ -24,6 +25,10 @@ export const Product = () => {
   const [openDeleteCommentModal, setOpenDeleteCommentModal] = useState(false);
   const handleOpenDeleteCommentModal = () => setOpenDeleteCommentModal(true);
   const handleCloseDeleteCommentModal = () => setOpenDeleteCommentModal(false);
+
+  const [openUpdateCommentModal, setOpenUpdateCommentModal] = useState(false);
+  const handleOpenUpdateCommentModal = () => setOpenUpdateCommentModal(true);
+  const handleCancelUpdateComment = () => setOpenUpdateCommentModal(false);
 
   const [openEdit, setOpenEdit] = React.useState(false);
   const handleOpenEdit = () => setOpenEdit(true);
@@ -42,6 +47,11 @@ export const Product = () => {
   const handleDeleteComment = async (commentId) => {
     setCommentId(commentId);
     handleOpenDeleteCommentModal();
+  };
+
+  const handleUpdateComment = async (commentId) => {
+    setCommentId(commentId);
+    handleOpenUpdateCommentModal();
   };
 
   const handleAddComment = async (e) => {
@@ -146,7 +156,8 @@ export const Product = () => {
                   </b>
                   <p>{comment.comment}</p>
                 </div>
-                <Button className="btn">
+                <Button className="btn"
+                onClick={() => handleUpdateComment(comment._id)}>
                   <CiEdit />
                 </Button>
                 <Button className="btn"
@@ -186,6 +197,7 @@ export const Product = () => {
         productId={id}
         commentId={commentId}
       />
+     
 
       <Footer />
     </div>
