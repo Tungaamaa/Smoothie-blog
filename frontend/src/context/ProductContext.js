@@ -15,7 +15,7 @@ export const ProductsContextProvider = ({ children }) => {
     if (!userContextLoading) {
       const fetchProducts = async () => {
         try {
-          const response = await axios.get("http://localhost:8080/recipes", {
+          const response = await axios.get("https://smoothie-blog.vercel.app/recipes", {
             headers: {
               Authorization: `Bearer ${currentUser.token}`,
             },

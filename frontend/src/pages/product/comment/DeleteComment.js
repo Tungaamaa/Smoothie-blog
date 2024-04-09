@@ -23,7 +23,7 @@ export const DeleteComment = ({
     try {
       setModalLoading(true);
       const response = await axios.delete(
-        `http://localhost:8080/recipes/${productId}/comments/${commentId}`,
+        `https://smoothie-blog.vercel.app//recipes/${productId}/comments/${commentId}`,
         {
           headers: {
             "Content-Type": "application/json",

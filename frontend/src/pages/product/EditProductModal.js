@@ -25,7 +25,7 @@ export const EditProductModal = (props) => {
 
   const handleSave = async () => {
     try {
-      const response = await axios.put(`http://localhost:8080/recipes/${id}`, formValues,
+      const response = await axios.put(`https://smoothie-blog.vercel.app/recipes/${id}`, formValues,
       {headers: {
         Authorization: `Bearer ${currentUser.token}`,
       },

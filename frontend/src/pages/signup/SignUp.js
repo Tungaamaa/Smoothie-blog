@@ -31,7 +31,7 @@ export const SignUp = () => {
   const handleSubmit = async () => {
     try {
       const response = await axios.post(
-        "http://localhost:8080/users/sign-up",
+        "https://smoothie-blog.vercel.app//users/sign-up",
         formValues
       );
 

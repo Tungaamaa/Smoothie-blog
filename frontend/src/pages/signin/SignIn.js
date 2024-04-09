@@ -28,7 +28,7 @@ export const SignIn = () => {
   const handleSignIn = async () => {
     try {
       const response = await axios.post(
-        "http://localhost:8080/users/sign-in",
+        "https://smoothie-blog.vercel.app//users/sign-in",
         formValues
       );
 

@@ -22,7 +22,7 @@ export const EditProfileModal = (props) => {
 
   const handleSave = async () => {
     try {
-      const response = await axios.put(`http://localhost:8080/account/editProfile`, formValues,
+      const response = await axios.put(`https://smoothie-blog.vercel.app//account/editProfile`, formValues,
       {headers: {
         Authorization: `Bearer ${currentUser.token}`,
       },
