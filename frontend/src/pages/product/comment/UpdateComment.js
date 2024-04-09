@@ -25,7 +25,7 @@ export const UpdateComment = ({
     try {
       setModalLoading(true);
       const response = await axios.put(
-        `https://smoothie-blog.vercel.app//workouts/${workoutId}/comments/${comment._id}`,
+        `https://smoothie-blog.onrender.com//workouts/${workoutId}/comments/${comment._id}`,
         {
           comment: updatedComment,
         },

@@ -61,7 +61,7 @@ export const Product = () => {
       alert("Please enter a comment");
     } else {
       const response = await axios.post(
-        `https://smoothie-blog.vercel.app//recipes/${id}/comments`,
+        `https://smoothie-blog.onrender.com/recipes/${id}/comments`,
         {
           comment,
         },

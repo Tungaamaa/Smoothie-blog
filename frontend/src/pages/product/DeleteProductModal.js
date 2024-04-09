@@ -16,7 +16,7 @@ export const DeleteProductModal = (props) => {
   const handleDeleteProduct = async () => {
     try {
       const response = await axios.delete(
-        `https://smoothie-blog.vercel.app//recipes/${id}`,
+        `https://smoothie-blog.onrender.com/recipes/${id}`,
         {
           headers: {
             Authorization: `Bearer ${currentUser.token}`,

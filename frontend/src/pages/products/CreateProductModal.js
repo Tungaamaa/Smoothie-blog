@@ -51,7 +51,7 @@ export const CreateProductModal = (props) => {
       const imageUrl = await uploadImage(file);
       console.log(imageUrl);
       const response = await axios.post(
-        "https://smoothie-blog.vercel.app//recipes",
+        "https://smoothie-blog.onrender.com/recipes",
         { ...formValues, image: imageUrl, type: type },
         {
           headers: {
